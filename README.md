@@ -5,3 +5,6 @@ Team:
 1) Renata Gafarova
 2) Aleksandr Ivanov
 3) Ivan Silin
+
+Host:
+https://ba-ml-student-marimo-dashboard.onrender.com/
