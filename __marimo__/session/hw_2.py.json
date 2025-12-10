@@ -1,0 +1,532 @@
+{
+  "version": "1",
+  "metadata": {
+    "marimo_version": "0.18.1"
+  },
+  "cells": [
+    {
+      "id": "BkCH",
+      "code_hash": "b8157c94188762abaf927946a205fb01",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"student-course-completion-prediction\">Student Course Completion Prediction</h1></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Hbol",
+      "code_hash": "1d0db38904205bec4d6f6f6a1f6cec3e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "MJUe",
+      "code_hash": "d2131465ff65a2c94fc3a3ee160a16ab",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "vblA",
+      "code_hash": "03a559a4ee5e83e846efd9b43c8d317e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "vJJS",
+      "code_hash": "cf1ccfac55863591e0feb8a1f4bd7cad",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"dataset-clean\">Dataset (clean)</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "bkHC",
+      "code_hash": "7e555606606f6193d54a4258a528ac05",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "lEQa",
+      "code_hash": "bf0eb7edb5c90022effcd7b111279ba6",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='lEQa-0' random-id='6dcc20cb-e0a6-26bc-e259-a94698bb8f5c'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;Gender&#92;&quot;:&#92;&quot;Male&#92;&quot;,&#92;&quot;Age&#92;&quot;:19,&#92;&quot;Education_Level&#92;&quot;:&#92;&quot;Diploma&#92;&quot;,&#92;&quot;Employment_Status&#92;&quot;:&#92;&quot;Student&#92;&quot;,&#92;&quot;City&#92;&quot;:&#92;&quot;Indore&#92;&quot;,&#92;&quot;Device_Type&#92;&quot;:&#92;&quot;Laptop&#92;&quot;,&#92;&quot;Internet_Connection_Quality&#92;&quot;:&#92;&quot;Medium&#92;&quot;,&#92;&quot;Course_Name&#92;&quot;:&#92;&quot;Data Analysis with Python&#92;&quot;,&#92;&quot;Category&#92;&quot;:&#92;&quot;Programming&#92;&quot;,&#92;&quot;Course_Level&#92;&quot;:&#92;&quot;Intermediate&#92;&quot;,&#92;&quot;Course_Duration_Days&#92;&quot;:60,&#92;&quot;Instructor_Rating&#92;&quot;:4.7,&#92;&quot;Login_Frequency&#92;&quot;:3,&#92;&quot;Average_Session_Duration_Min&#92;&quot;:30,&#92;&quot;Video_Completion_Rate&#92;&quot;:55.0,&#92;&quot;Discussion_Participation&#92;&quot;:2,&#92;&quot;Time_Spent_Hours&#92;&quot;:0.5,&#92;&quot;Days_Since_Last_Login&#92;&quot;:1,&#92;&quot;Notifications_Checked&#92;&quot;:6,&#92;&quot;Peer_Interaction_Score&#92;&quot;:4.3,&#92;&quot;Assignments_Submitted&#92;&quot;:8,&#92;&quot;Assignments_Missed&#92;&quot;:1,&#92;&quot;Quiz_Attempts&#92;&quot;:5,&#92;&quot;Quiz_Score_Avg&#92;&quot;:80.9,&#92;&quot;Project_Grade&#92;&quot;:71.2,&#92;&quot;Progress_Percentage&#92;&quot;:70.8,&#92;&quot;Rewatch_Count&#92;&quot;:0,&#92;&quot;Payment_Mode&#92;&quot;:&#92;&quot;Scholarship&#92;&quot;,&#92;&quot;Fee_Paid&#92;&quot;:&#92;&quot;No&#92;&quot;,&#92;&quot;Discount_Used&#92;&quot;:&#92;&quot;No&#92;&quot;,&#92;&quot;Payment_Amount&#92;&quot;:1740,&#92;&quot;App_Usage_Percentage&#92;&quot;:49,&#92;&quot;Reminder_Emails_Clicked&#92;&quot;:3,&#92;&quot;Support_Tickets_Raised&#92;&quot;:4,&#92;&quot;Satisfaction_Rating&#92;&quot;:3.5,&#92;&quot;Completed&#92;&quot;:&#92;&quot;Completed&#92;&quot;},{&#92;&quot;Gender&#92;&quot;:&#92;&quot;Female&#92;&quot;,&#92;&quot;Age&#92;&quot;:17,&#92;&quot;Education_Level&#92;&quot;:&#92;&quot;Bachelor&#92;&quot;,&#92;&quot;Employment_Status&#92;&quot;:&#92;&quot;Student&#92;&quot;,&#92;&quot;City&#92;&quot;:&#92;&quot;Delhi&#92;&quot;,&#92;&quot;Device_Type&#92;&quot;:&#92;&quot;Laptop&#92;&quot;,&#92;&quot;Internet_Connection_Quality&#92;&quot;:&#92;&quot;Low&#92;&quot;,&#92;&quot;Course_Name&#92;&quot;:&#92;&quot;Machine Learning A-Z&#92;&quot;,&#92;&quot;Category&#92;&quot;:&#92;&quot;Programming&#92;&quot;,&#92;&quot;Course_Level&#92;&quot;:&#92;&quot;Advanced&#92;&quot;,&#92;&quot;Course_Duration_Days&#92;&quot;:90,&#92;&quot;Instructor_Rating&#92;&quot;:4.6,&#92;&quot;Login_Frequency&#92;&quot;:4,&#92;&quot;Average_Session_Duration_Min&#92;&quot;:37,&#92;&quot;Video_Completion_Rate&#92;&quot;:84.1,&#92;&quot;Discussion_Participation&#92;&quot;:2,&#92;&quot;Time_Spent_Hours&#92;&quot;:0.9,&#92;&quot;Days_Since_Last_Login&#92;&quot;:3,&#92;&quot;Notifications_Checked&#92;&quot;:5,&#92;&quot;Peer_Interaction_Score&#92;&quot;:7.8,&#92;&quot;Assignments_Submitted&#92;&quot;:4,&#92;&quot;Assignments_Missed&#92;&quot;:6,&#92;&quot;Quiz_Attempts&#92;&quot;:3,&#92;&quot;Quiz_Score_Avg&#92;&quot;:78.4,&#92;&quot;Project_Grade&#92;&quot;:42.5,&#92;&quot;Progress_Percentage&#92;&quot;:55.6,&#92;&quot;Rewatch_Count&#92;&quot;:2,&#92;&quot;Payment_Mode&#92;&quot;:&#92;&quot;Credit Card&#92;&quot;,&#92;&quot;Fee_Paid&#92;&quot;:&#92;&quot;Yes&#92;&quot;,&#92;&quot;Discount_Used&#92;&quot;:&#92;&quot;No&#92;&quot;,&#92;&quot;Payment_Amount&#92;&quot;:6147,&#92;&quot;App_Usage_Percentage&#92;&quot;:86,&#92;&quot;Reminder_Emails_Clicked&#92;&quot;:0,&#92;&quot;Support_Tickets_Raised&#92;&quot;:0,&#92;&quot;Satisfaction_Rating&#92;&quot;:4.5,&#92;&quot;Completed&#92;&quot;:&#92;&quot;Not Completed&#92;&quot;},{&#92;&quot;Gender&#92;&quot;:&#92;&quot;Female&#92;&quot;,&#92;&quot;Age&#92;&quot;:34,&#92;&quot;Education_Level&#92;&quot;:&#92;&quot;Master&#92;&quot;,&#92;&quot;Employment_Status&#92;&quot;:&#92;&quot;Student&#92;&quot;,&#92;&quot;City&#92;&quot;:&#92;&quot;Chennai&#92;&quot;,&#92;&quot;Device_Type&#92;&quot;:&#92;&quot;Mobile&#92;&quot;,&#92;&quot;Internet_Connection_Quality&#92;&quot;:&#92;&quot;Medium&#92;&quot;,&#92;&quot;Course_Name&#92;&quot;:&#92;&quot;Python Basics&#92;&quot;,&#92;&quot;Category&#92;&quot;:&#92;&quot;Programming&#92;&quot;,&#92;&quot;Course_Level&#92;&quot;:&#92;&quot;Beginner&#92;&quot;,&#92;&quot;Course_Duration_Days&#92;&quot;:45,&#92;&quot;Instructor_Rating&#92;&quot;:4.6,&#92;&quot;Login_Frequency&#92;&quot;:5,&#92;&quot;Average_Session_Duration_Min&#92;&quot;:9,&#92;&quot;Video_Completion_Rate&#92;&quot;:75.6,&#92;&quot;Discussion_Participation&#92;&quot;:3,&#92;&quot;Time_Spent_Hours&#92;&quot;:0.5,&#92;&quot;Days_Since_Last_Login&#92;&quot;:19,&#92;&quot;Notifications_Checked&#92;&quot;:5,&#92;&quot;Peer_Interaction_Score&#92;&quot;:6.7,&#92;&quot;Assignments_Submitted&#92;&quot;:8,&#92;&quot;Assignments_Missed&#92;&quot;:2,&#92;&quot;Quiz_Attempts&#92;&quot;:3,&#92;&quot;Quiz_Score_Avg&#92;&quot;:100.0,&#92;&quot;Project_Grade&#92;&quot;:87.9,&#92;&quot;Progress_Percentage&#92;&quot;:78.8,&#92;&quot;Rewatch_Count&#92;&quot;:2,&#92;&quot;Payment_Mode&#92;&quot;:&#92;&quot;NetBanking&#92;&quot;,&#92;&quot;Fee_Paid&#92;&quot;:&#92;&quot;Yes&#92;&quot;,&#92;&quot;Discount_Used&#92;&quot;:&#92;&quot;No&#92;&quot;,&#92;&quot;Payment_Amount&#92;&quot;:4280,&#92;&quot;App_Usage_Percentage&#92;&quot;:85,&#92;&quot;Reminder_Emails_Clicked&#92;&quot;:1,&#92;&quot;Support_Tickets_Raised&#92;&quot;:0,&#92;&quot;Satisfaction_Rating&#92;&quot;:5.0,&#92;&quot;Completed&#92;&quot;:&#92;&quot;Completed&#92;&quot;},{&#92;&quot;Gender&#92;&quot;:&#92;&quot;Female&#92;&quot;,&#92;&quot;Age&#92;&quot;:29,&#92;&quot;Education_Level&#92;&quot;:&#92;&quot;Diploma&#92;&quot;,&#92;&quot;Employment_Status&#92;&quot;:&#92;&quot;Employed&#92;&quot;,&#92;&quot;City&#92;&quot;:&#92;&quot;Surat&#92;&quot;,&#92;&quot;Device_Type&#92;&quot;:&#92;&quot;Mobile&#92;&quot;,&#92;&quot;Internet_Connection_Quality&#92;&quot;:&#92;&quot;High&#92;&quot;,&#92;&quot;Course_Name&#92;&quot;:&#92;&quot;UI/UX Design Fundamentals&#92;&quot;,&#92;&quot;Category&#92;&quot;:&#92;&quot;Design&#92;&quot;,&#92;&quot;Course_Level&#92;&quot;:&#92;&quot;Beginner&#92;&quot;,&#92;&quot;Course_Duration_Days&#92;&quot;:40,&#92;&quot;Instructor_Rating&#92;&quot;:4.4,&#92;&quot;Login_Frequency&#92;&quot;:2,&#92;&quot;Average_Session_Duration_Min&#92;&quot;:27,&#92;&quot;Video_Completion_Rate&#92;&quot;:63.3,&#92;&quot;Discussion_Participation&#92;&quot;:1,&#92;&quot;Time_Spent_Hours&#92;&quot;:7.4,&#92;&quot;Days_Since_Last_Login&#92;&quot;:19,&#92;&quot;Notifications_Checked&#92;&quot;:9,&#92;&quot;Peer_Interaction_Score&#92;&quot;:6.4,&#92;&quot;Assignments_Submitted&#92;&quot;:0,&#92;&quot;Assignments_Missed&#92;&quot;:10,&#92;&quot;Quiz_Attempts&#92;&quot;:4,&#92;&quot;Quiz_Score_Avg&#92;&quot;:59.1,&#92;&quot;Project_Grade&#92;&quot;:51.4,&#92;&quot;Progress_Percentage&#92;&quot;:24.7,&#92;&quot;Rewatch_Count&#92;&quot;:4,&#92;&quot;Payment_Mode&#92;&quot;:&#92;&quot;UPI&#92;&quot;,&#92;&quot;Fee_Paid&#92;&quot;:&#92;&quot;Yes&#92;&quot;,&#92;&quot;Discount_Used&#92;&quot;:&#92;&quot;No&#92;&quot;,&#92;&quot;Payment_Amount&#92;&quot;:3812,&#92;&quot;App_Usage_Percentage&#92;&quot;:42,&#92;&quot;Reminder_Emails_Clicked&#92;&quot;:2,&#92;&quot;Support_Tickets_Raised&#92;&quot;:3,&#92;&quot;Satisfaction_Rating&#92;&quot;:3.8,&#92;&quot;Completed&#92;&quot;:&#92;&quot;Completed&#92;&quot;},{&#92;&quot;Gender&#92;&quot;:&#92;&quot;Female&#92;&quot;,&#92;&quot;Age&#92;&quot;:19,&#92;&quot;Education_Level&#92;&quot;:&#92;&quot;Master&#92;&quot;,&#92;&quot;Employment_Status&#92;&quot;:&#92;&quot;Self-Employed&#92;&quot;,&#92;&quot;City&#92;&quot;:&#92;&quot;Lucknow&#92;&quot;,&#92;&quot;Device_Type&#92;&quot;:&#92;&quot;Laptop&#92;&quot;,&#92;&quot;Internet_Connection_Quality&#92;&quot;:&#92;&quot;Medium&#92;&quot;,&#92;&quot;Course_Name&#92;&quot;:&#92;&quot;Machine Learning A-Z&#92;&quot;,&#92;&quot;Category&#92;&quot;:&#92;&quot;Programming&#92;&quot;,&#92;&quot;Course_Level&#92;&quot;:&#92;&quot;Advanced&#92;&quot;,&#92;&quot;Course_Duration_Days&#92;&quot;:90,&#92;&quot;Instructor_Rating&#92;&quot;:4.6,&#92;&quot;Login_Frequency&#92;&quot;:2,&#92;&quot;Average_Session_Duration_Min&#92;&quot;:36,&#92;&quot;Video_Completion_Rate&#92;&quot;:86.4,&#92;&quot;Discussion_Participation&#92;&quot;:1,&#92;&quot;Time_Spent_Hours&#92;&quot;:0.5,&#92;&quot;Days_Since_Last_Login&#92;&quot;:4,&#92;&quot;Notifications_Checked&#92;&quot;:7,&#92;&quot;Peer_Interaction_Score&#92;&quot;:7.5,&#92;&quot;Assignments_Submitted&#92;&quot;:5,&#92;&quot;Assignments_Missed&#92;&quot;:5,&#92;&quot;Quiz_Attempts&#92;&quot;:8,&#92;&quot;Quiz_Score_Avg&#92;&quot;:84.8,&#92;&quot;Project_Grade&#92;&quot;:93.0,&#92;&quot;Progress_Percentage&#92;&quot;:64.9,&#92;&quot;Rewatch_Count&#92;&quot;:4,&#92;&quot;Payment_Mode&#92;&quot;:&#92;&quot;Debit Card&#92;&quot;,&#92;&quot;Fee_Paid&#92;&quot;:&#92;&quot;Yes&#92;&quot;,&#92;&quot;Discount_Used&#92;&quot;:&#92;&quot;Yes&#92;&quot;,&#92;&quot;Payment_Amount&#92;&quot;:5486,&#92;&quot;App_Usage_Percentage&#92;&quot;:91,&#92;&quot;Reminder_Emails_Clicked&#92;&quot;:3,&#92;&quot;Support_Tickets_Raised&#92;&quot;:0,&#92;&quot;Satisfaction_Rating&#92;&quot;:4.0,&#92;&quot;Completed&#92;&quot;:&#92;&quot;Completed&#92;&quot;}]&quot;' data-total-rows='5' data-total-columns='36' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='true' data-page-size='10' data-field-types='[[&quot;Gender&quot;,[&quot;string&quot;,&quot;object&quot;]],[&quot;Age&quot;,[&quot;integer&quot;,&quot;int64&quot;]],[&quot;Education_Level&quot;,[&quot;string&quot;,&quot;object&quot;]],[&quot;Employment_Status&quot;,[&quot;string&quot;,&quot;object&quot;]],[&quot;City&quot;,[&quot;string&quot;,&quot;object&quot;]],[&quot;Device_Type&quot;,[&quot;string&quot;,&quot;object&quot;]],[&quot;Internet_Connection_Quality&quot;,[&quot;string&quot;,&quot;object&quot;]],[&quot;Course_Name&quot;,[&quot;string&quot;,&quot;object&quot;]],[&quot;Category&quot;,[&quot;string&quot;,&quot;object&quot;]],[&quot;Course_Level&quot;,[&quot;string&quot;,&quot;object&quot;]],[&quot;Course_Duration_Days&quot;,[&quot;integer&quot;,&quot;int64&quot;]],[&quot;Instructor_Rating&quot;,[&quot;number&quot;,&quot;float64&quot;]],[&quot;Login_Frequency&quot;,[&quot;integer&quot;,&quot;int64&quot;]],[&quot;Average_Session_Duration_Min&quot;,[&quot;integer&quot;,&quot;int64&quot;]],[&quot;Video_Completion_Rate&quot;,[&quot;number&quot;,&quot;float64&quot;]],[&quot;Discussion_Participation&quot;,[&quot;integer&quot;,&quot;int64&quot;]],[&quot;Time_Spent_Hours&quot;,[&quot;number&quot;,&quot;float64&quot;]],[&quot;Days_Since_Last_Login&quot;,[&quot;integer&quot;,&quot;int64&quot;]],[&quot;Notifications_Checked&quot;,[&quot;integer&quot;,&quot;int64&quot;]],[&quot;Peer_Interaction_Score&quot;,[&quot;number&quot;,&quot;float64&quot;]],[&quot;Assignments_Submitted&quot;,[&quot;integer&quot;,&quot;int64&quot;]],[&quot;Assignments_Missed&quot;,[&quot;integer&quot;,&quot;int64&quot;]],[&quot;Quiz_Attempts&quot;,[&quot;integer&quot;,&quot;int64&quot;]],[&quot;Quiz_Score_Avg&quot;,[&quot;number&quot;,&quot;float64&quot;]],[&quot;Project_Grade&quot;,[&quot;number&quot;,&quot;float64&quot;]],[&quot;Progress_Percentage&quot;,[&quot;number&quot;,&quot;float64&quot;]],[&quot;Rewatch_Count&quot;,[&quot;integer&quot;,&quot;int64&quot;]],[&quot;Payment_Mode&quot;,[&quot;string&quot;,&quot;object&quot;]],[&quot;Fee_Paid&quot;,[&quot;string&quot;,&quot;object&quot;]],[&quot;Discount_Used&quot;,[&quot;string&quot;,&quot;object&quot;]],[&quot;Payment_Amount&quot;,[&quot;integer&quot;,&quot;int64&quot;]],[&quot;App_Usage_Percentage&quot;,[&quot;integer&quot;,&quot;int64&quot;]],[&quot;Reminder_Emails_Clicked&quot;,[&quot;integer&quot;,&quot;int64&quot;]],[&quot;Support_Tickets_Raised&quot;,[&quot;integer&quot;,&quot;int64&quot;]],[&quot;Satisfaction_Rating&quot;,[&quot;number&quot;,&quot;float64&quot;]],[&quot;Completed&quot;,[&quot;string&quot;,&quot;object&quot;]]]' data-show-filters='true' data-show-download='true' data-show-column-summaries='false' data-show-data-types='true' data-show-page-size-selector='false' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "PKri",
+      "code_hash": "81b7b077ba244fc246c0e2b218712dc7",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\u041a\u043e\u043b\u043e\u043d\u043a\u0438: ['Gender', 'Age', 'Education_Level', 'Employment_Status', 'City', 'Device_Type', 'Internet_Connection_Quality', 'Course_Name', 'Category', 'Course_Level', 'Course_Duration_Days', 'Instructor_Rating', 'Login_Frequency', 'Average_Session_Duration_Min', 'Video_Completion_Rate', 'Discussion_Participation', 'Time_Spent_Hours', 'Days_Since_Last_Login', 'Notifications_Checked', 'Peer_Interaction_Score', 'Assignments_Submitted', 'Assignments_Missed', 'Quiz_Attempts', 'Quiz_Score_Avg', 'Project_Grade', 'Progress_Percentage', 'Rewatch_Count', 'Payment_Mode', 'Fee_Paid', 'Discount_Used', 'Payment_Amount', 'App_Usage_Percentage', 'Reminder_Emails_Clicked', 'Support_Tickets_Raised', 'Satisfaction_Rating', 'Completed']\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "Xref",
+      "code_hash": "da532fe2a093d88bb6a013f1e02d5c75",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\u0420\u0430\u0441\u043f\u0440\u0435\u0434\u0435\u043b\u0435\u043d\u0438\u0435 \u043a\u043b\u0430\u0441\u0441\u043e\u0432 (0/1):\n1    0.5097\n0    0.4903\nName: proportion, dtype: float64\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "SFPL",
+      "code_hash": "30416f34a55a7c6bbd34a962e83dd6bb",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\u041a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u0430\u043b\u044c\u043d\u044b\u0435 \u043f\u0440\u0438\u0437\u043d\u0430\u043a\u0438: ['Gender', 'Education_Level', 'Employment_Status', 'City', 'Device_Type', 'Internet_Connection_Quality', 'Course_Name', 'Category', 'Course_Level', 'Payment_Mode', 'Fee_Paid', 'Discount_Used']\n\n\u0427\u0438\u0441\u043b\u043e\u0432\u044b\u0435 \u043f\u0440\u0438\u0437\u043d\u0430\u043a\u0438: ['Age', 'Course_Duration_Days', 'Instructor_Rating', 'Login_Frequency', 'Average_Session_Duration_Min', 'Video_Completion_Rate', 'Discussion_Participation', 'Time_Spent_Hours', 'Days_Since_Last_Login', 'Notifications_Checked', 'Peer_Interaction_Score', 'Assignments_Submitted', 'Assignments_Missed', 'Quiz_Attempts', 'Quiz_Score_Avg', 'Project_Grade', 'Progress_Percentage', 'Rewatch_Count', 'Payment_Amount', 'App_Usage_Percentage', 'Reminder_Emails_Clicked', 'Support_Tickets_Raised', 'Satisfaction_Rating']\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "BYtC",
+      "code_hash": "1f5c20abe3ddb19f3c5ced46fd5f0b7e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "RGSE",
+      "code_hash": "402af891dc271a424b3616add02a0064",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Kclp",
+      "code_hash": "d1debdcbd856c2ae3693d7ff594792a7",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Train shape: (70000, 35) Test shape: (30000, 35)\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "djgM",
+      "code_hash": "f11d65ffc0b1c25f152f77ffc2a8ab65",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "DnEU",
+      "code_hash": "ef1bf930ca81b6400d7fd54ae97a872a",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"marimo-slider-show\">Marimo Slider Show</h1></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Hstk",
+      "code_hash": "ccfe15acdd53be0161f52b35f7a619c1",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">\u041c\u043e\u0434\u0435\u043b\u044c 1 \u2014 Logistic Regression</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "nWHF",
+      "code_hash": "8070241de4e62ab04f4b9cd939982abc",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Logistic Regression:\n  Precision: 0.608\n  Recall:    0.626\n  F1-score:  0.617\n----------------------------------------\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "iLit",
+      "code_hash": "36cf2130ac8782a63adfd576ca98d594",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">\u041c\u043e\u0434\u0435\u043b\u044c 2 \u2014 CatBoostClassifier</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ZHCJ",
+      "code_hash": "56b243894e4277d64ecb627dac28a709",
+      "outputs": [
+        {
+          "type": "error",
+          "ename": "interruption",
+          "evalue": "This cell was interrupted and needs to be re-run",
+          "traceback": []
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "0:\tlearn: 0.5585072\ttest: 0.5557930\tbest: 0.5557930 (0)\ttotal: 121ms\tremaining: 1m\n100:\tlearn: 0.6247353\ttest: 0.6122912\tbest: 0.6150203 (2)\ttotal: 12.5s\tremaining: 49.4s\n",
+          "mimetype": "text/plain"
+        },
+        {
+          "type": "stream",
+          "name": "stderr",
+          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">&quot;C:\\Users\\Asus\\PycharmProjects\\ML_BA\\.venv\\Lib\\site-packages\\marimo\\_runtime\\executor.py&quot;</span>, line <span class=\"m\">138</span>, in <span class=\"n\">execute_cell</span>\n<span class=\"w\">    </span><span class=\"n\">exec</span><span class=\"p\">(</span><span class=\"n\">cell</span><span class=\"o\">.</span><span class=\"n\">body</span><span class=\"p\">,</span> <span class=\"n\">glbls</span><span class=\"p\">)</span>\n  File <span class=\"nb\">&quot;C:\\Users\\Asus\\AppData\\Local\\Temp\\marimo_28668\\__marimo__cell_ZHCJ_.py&quot;</span>, line <span class=\"m\">16</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"n\">cat_model</span><span class=\"o\">.</span><span class=\"n\">fit</span><span class=\"p\">(</span><span class=\"n\">train_pool</span><span class=\"p\">,</span> <span class=\"n\">eval_set</span><span class=\"o\">=</span><span class=\"n\">test_pool</span><span class=\"p\">,</span> <span class=\"n\">use_best_model</span><span class=\"o\">=</span><span class=\"kc\">True</span><span class=\"p\">)</span>\n  File <span class=\"nb\">&quot;C:\\Users\\Asus\\PycharmProjects\\ML_BA\\.venv\\Lib\\site-packages\\catboost\\core.py&quot;</span>, line <span class=\"m\">5245</span>, in <span class=\"n\">fit</span>\n<span class=\"w\">    </span><span class=\"bp\">self</span><span class=\"o\">.</span><span class=\"n\">_fit</span><span class=\"p\">(</span><span class=\"n\">X</span><span class=\"p\">,</span> <span class=\"n\">y</span><span class=\"p\">,</span> <span class=\"n\">cat_features</span><span class=\"p\">,</span> <span class=\"n\">text_features</span><span class=\"p\">,</span> <span class=\"n\">embedding_features</span><span class=\"p\">,</span> <span class=\"kc\">None</span><span class=\"p\">,</span> <span class=\"n\">graph</span><span class=\"p\">,</span> <span class=\"n\">sample_weight</span><span class=\"p\">,</span> <span class=\"kc\">None</span><span class=\"p\">,</span> <span class=\"kc\">None</span><span class=\"p\">,</span> <span class=\"kc\">None</span><span class=\"p\">,</span> <span class=\"kc\">None</span><span class=\"p\">,</span> <span class=\"n\">baseline</span><span class=\"p\">,</span> <span class=\"n\">use_best_model</span><span class=\"p\">,</span>\n  File <span class=\"nb\">&quot;C:\\Users\\Asus\\PycharmProjects\\ML_BA\\.venv\\Lib\\site-packages\\catboost\\core.py&quot;</span>, line <span class=\"m\">2410</span>, in <span class=\"n\">_fit</span>\n<span class=\"w\">    </span><span class=\"bp\">self</span><span class=\"o\">.</span><span class=\"n\">_train</span><span class=\"p\">(</span>\n  File <span class=\"nb\">&quot;C:\\Users\\Asus\\PycharmProjects\\ML_BA\\.venv\\Lib\\site-packages\\catboost\\core.py&quot;</span>, line <span class=\"m\">1790</span>, in <span class=\"n\">_train</span>\n<span class=\"w\">    </span><span class=\"bp\">self</span><span class=\"o\">.</span><span class=\"n\">_object</span><span class=\"o\">.</span><span class=\"n\">_train</span><span class=\"p\">(</span><span class=\"n\">train_pool</span><span class=\"p\">,</span> <span class=\"n\">test_pool</span><span class=\"p\">,</span> <span class=\"n\">params</span><span class=\"p\">,</span> <span class=\"n\">allow_clear_pool</span><span class=\"p\">,</span> <span class=\"n\">init_model</span><span class=\"o\">.</span><span class=\"n\">_object</span> <span class=\"k\">if</span> <span class=\"n\">init_model</span> <span class=\"k\">else</span> <span class=\"kc\">None</span><span class=\"p\">)</span>\n  File <span class=\"nb\">&quot;_catboost.pyx&quot;</span>, line <span class=\"m\">5023</span>, in <span class=\"n\">_catboost._CatBoost._train</span>\n  File <span class=\"nb\">&quot;_catboost.pyx&quot;</span>, line <span class=\"m\">5072</span>, in <span class=\"n\">_catboost._CatBoost._train</span>\n<span class=\"gr\">KeyboardInterrupt</span>\n</pre></div>\n</span>",
+          "mimetype": "application/vnd.marimo+traceback"
+        }
+      ]
+    },
+    {
+      "id": "ROlb",
+      "code_hash": "1275dec0d1fa9f89834598651667a0ae",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">\u041c\u043e\u0434\u0435\u043b\u044c 3 \u2014 RandomForestClassifier</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "qnkX",
+      "code_hash": "695ab3ce9ddc15e9d49e59f790268564",
+      "outputs": [
+        {
+          "type": "error",
+          "ename": "interruption",
+          "evalue": "This cell was interrupted and needs to be re-run",
+          "traceback": []
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Random Forest:\n  Precision: 0.599\n  Recall:    0.624\n  F1-score:  0.611\n----------------------------------------\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "TqIu",
+      "code_hash": "c9a55601216d54677147996bbdff563e",
+      "outputs": [
+        {
+          "type": "error",
+          "ename": "exception",
+          "evalue": "An ancestor raised an exception (KeyboardInterrupt): ",
+          "traceback": []
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Vxnm",
+      "code_hash": "61a3b2bb9d25cba08b79cbdceb4109a1",
+      "outputs": [
+        {
+          "type": "error",
+          "ename": "exception",
+          "evalue": "An ancestor raised an exception (KeyboardInterrupt): ",
+          "traceback": []
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ulZA",
+      "code_hash": "383cc96017ea9599abbc9f64b0b78e17",
+      "outputs": [
+        {
+          "type": "error",
+          "ename": "exception",
+          "evalue": "Name `metrics_df` is not defined. It was expected to be defined in ",
+          "traceback": []
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stderr",
+          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">&quot;C:\\Users\\Asus\\PycharmProjects\\ML_BA\\.venv\\Lib\\site-packages\\marimo\\_runtime\\executor.py&quot;</span>, line <span class=\"m\">138</span>, in <span class=\"n\">execute_cell</span>\n<span class=\"w\">    </span><span class=\"n\">exec</span><span class=\"p\">(</span><span class=\"n\">cell</span><span class=\"o\">.</span><span class=\"n\">body</span><span class=\"p\">,</span> <span class=\"n\">glbls</span><span class=\"p\">)</span>\n  File <span class=\"nb\">&quot;C:\\Users\\Asus\\AppData\\Local\\Temp\\marimo_28668\\__marimo__cell_ulZA_.py&quot;</span>, line <span class=\"m\">1</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"n\">models</span> <span class=\"o\">=</span> <span class=\"n\">metrics_df</span><span class=\"p\">[</span><span class=\"s2\">&quot;Model&quot;</span><span class=\"p\">]</span>\n<span class=\"w\">             </span><span class=\"pm\">^^^^^^^^^^</span>\n<span class=\"gr\">NameError</span>: <span class=\"n\">name &#39;metrics_df&#39; is not defined</span>\n</pre></div>\n</span>",
+          "mimetype": "application/vnd.marimo+traceback"
+        }
+      ]
+    },
+    {
+      "id": "ecfG",
+      "code_hash": "f65dffd416254210daa70cc89715c161",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='BYtC-0' random-id='bc0147ea-2429-ae45-d4ae-d31741296314'><marimo-slider data-initial-value='30' data-label='&quot;&lt;span class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&gt;&lt;span class=&#92;&quot;paragraph&#92;&quot;&gt;Test size(%)&lt;/span&gt;&lt;/span&gt;&quot;' data-start='10' data-stop='60' data-step='5' data-steps='[]' data-debounce='false' data-disabled='false' data-orientation='&quot;horizontal&quot;' data-show-value='false' data-include-input='false' data-full-width='false'></marimo-slider></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Pvdt",
+      "code_hash": "70d6e57e4a95cceb6e8cf7344c202c42",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"_1\">\u041a\u043b\u0430\u0441\u0442\u0435\u0440\u0438\u0437\u0430\u0446\u0438\u044f</h1></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ZBYS",
+      "code_hash": "e37c494e6d88f9369baa0374694408e1",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"k-means\">k-means</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "aLJB",
+      "code_hash": "cce3d9e1330dd62356ec3c5a5cf4f6d5",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "nHfw",
+      "code_hash": "9624ad49a7f7da688a4b2778d0e36a63",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[100000, 82]"
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\u041a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u0430\u043b\u044c\u043d\u044b\u0435 \u043f\u0440\u0438\u0437\u043d\u0430\u043a\u0438: ['Gender', 'Education_Level', 'Employment_Status', 'City', 'Device_Type', 'Internet_Connection_Quality', 'Course_Name', 'Category', 'Course_Level', 'Payment_Mode', 'Fee_Paid', 'Discount_Used']\n\u0427\u0438\u0441\u043b\u043e\u0432\u044b\u0435 \u043f\u0440\u0438\u0437\u043d\u0430\u043a\u0438: ['Age', 'Course_Duration_Days', 'Instructor_Rating', 'Login_Frequency', 'Average_Session_Duration_Min', 'Video_Completion_Rate', 'Discussion_Participation', 'Time_Spent_Hours', 'Days_Since_Last_Login', 'Notifications_Checked', 'Peer_Interaction_Score', 'Assignments_Submitted', 'Assignments_Missed', 'Quiz_Attempts', 'Quiz_Score_Avg', 'Project_Grade', 'Progress_Percentage', 'Rewatch_Count', 'Payment_Amount', 'App_Usage_Percentage', 'Reminder_Emails_Clicked', 'Support_Tickets_Raised', 'Satisfaction_Rating']\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "AjVT",
+      "code_hash": "72a1dbf304986160a852942d477e7193",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='AjVT-0' random-id='283df4d6-d6d0-a75a-c8b2-5eeaf6f77529'><marimo-slider data-initial-value='3' data-label='&quot;&lt;span class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&gt;&lt;span class=&#92;&quot;paragraph&#92;&quot;&gt;\u0427\u0438\u0441\u043b\u043e \u043a\u043b\u0430\u0441\u0442\u0435\u0440\u043e\u0432 K&lt;/span&gt;&lt;/span&gt;&quot;' data-start='2' data-stop='10' data-step='1' data-steps='[]' data-debounce='false' data-disabled='false' data-orientation='&quot;horizontal&quot;' data-show-value='true' data-include-input='false' data-full-width='false'></marimo-slider></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "xXTn",
+      "code_hash": "4b71458b37dc0984f7b50d63a58dc5b2",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<iframe srcdoc='&lt;!DOCTYPE html&gt;\n&lt;html lang=&quot;en&quot;&gt;\n  &lt;head&gt;\n    &lt;base href=&#x27;http://127.0.0.1:2718/mpl/2705183243440/&#x27; /&gt;\n    &lt;link rel=&quot;stylesheet&quot; href=&quot;http://127.0.0.1:2718/mpl/2705183243440/_static/css/page.css&quot; type=&quot;text/css&quot; /&gt;\n    &lt;link rel=&quot;stylesheet&quot; href=&quot;http://127.0.0.1:2718/mpl/2705183243440/_static/css/boilerplate.css&quot; type=&quot;text/css&quot; /&gt;\n    &lt;link rel=&quot;stylesheet&quot; href=&quot;http://127.0.0.1:2718/mpl/2705183243440/_static/css/fbm.css&quot; type=&quot;text/css&quot; /&gt;\n    &lt;link rel=&quot;stylesheet&quot; href=&quot;http://127.0.0.1:2718/mpl/2705183243440/_static/css/mpl.css&quot; type=&quot;text/css&quot; /&gt;\n    &lt;link rel=&quot;stylesheet&quot; href=&quot;http://127.0.0.1:2718/mpl/2705183243440/custom.css&quot; type=&quot;text/css&quot; /&gt;\n    &lt;script src=&quot;http://127.0.0.1:2718/mpl/2705183243440/mpl.js&quot;&gt;&lt;/script&gt;\n\n    &lt;script&gt;\n      function ondownload(figure, format) {\n        window.open(&#x27;download.&#x27; + format + &#x27;?figure=&#x27; + figure.id, &#x27;_blank&#x27;);\n      };\n\n      function ready(fn) {\n        if (document.readyState != &quot;loading&quot;) {\n          fn();\n        } else {\n          document.addEventListener(&quot;DOMContentLoaded&quot;, fn);\n        }\n      }\n\n      ready(\n        function() {\n          var websocket_type = mpl.get_websocket_type();\n          var websocket = new websocket_type(&quot;ws://127.0.0.1:2718/mpl/10645/ws?figure=2705183243440&quot;);\n\n          // mpl.figure creates a new figure on the webpage.\n          var fig = new mpl.figure(\n              // A unique numeric identifier for the figure\n              2705183243440,\n              // A websocket object\n              websocket,\n              // A function called when a file type is selected for download\n              ondownload,\n              // The HTML element in which to place the figure\n              document.getElementById(&quot;figure&quot;));\n        }\n      );\n    &lt;/script&gt;\n\n    &lt;title&gt;marimo&lt;/title&gt;\n  &lt;/head&gt;\n\n  &lt;body&gt;\n    &lt;div id=&quot;figure&quot;&gt;&lt;/div&gt;\n  &lt;/body&gt;\n&lt;/html&gt;' width='100%' height='550px' onload='__resizeIframe(this)' frameborder='0'></iframe>"
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\u0420\u0430\u0441\u043f\u0440\u0435\u0434\u0435\u043b\u0435\u043d\u0438\u0435 \u043f\u043e \u043a\u043b\u0430\u0441\u0442\u0435\u0440\u0430\u043c:\ncluster\n0    35582\n1    32495\n2    31923\nName: count, dtype: int64 \n\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "pHFh",
+      "code_hash": "b42c62ec70a581832d22d8c5dd8ebf65",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"silhouette-score\">\ud83d\udccf Silhouette Score</h3>\n<span class=\"paragraph\"><strong>Silhouette Score = 0.055</strong></span>\n<span class=\"paragraph\">\u0418\u043d\u0442\u0435\u0440\u043f\u0440\u0435\u0442\u0430\u0446\u0438\u044f:</span>\n<ul>\n<li>0.5\u20131.0 \u2192 \u0445\u043e\u0440\u043e\u0448\u0438\u0435, \u0447\u0451\u0442\u043a\u0438\u0435 \u043a\u043b\u0430\u0441\u0442\u0435\u0440\u044b  </li>\n<li>0.2\u20130.5 \u2192 \u0434\u043e\u043f\u0443\u0441\u0442\u0438\u043c\u044b\u0435, \u0441\u0440\u0435\u0434\u043d\u0438\u0435  </li>\n<li>\u043d\u0438\u0436\u0435 0.2 \u2192 \u0441\u043b\u0430\u0431\u0430\u044f \u0441\u0435\u0433\u043c\u0435\u043d\u0442\u0430\u0446\u0438\u044f  </li>\n</ul></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "aCCu",
+      "code_hash": "4dbba5048665dc20d3fdfd1e2ae2d4ad",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"0\">\u041a\u043b\u0430\u0441\u0442\u0435\u0440 0</h3>\n<h4 id=\"_1\">\ud83d\udcca \u041a\u043b\u044e\u0447\u0435\u0432\u044b\u0435 \u043f\u043e\u043a\u0430\u0437\u0430\u0442\u0435\u043b\u0438</h4>\n<ul>\n<li><strong>Login_Frequency</strong>: 4.51</li>\n<li><strong>Average_Session_Duration_Min</strong>: 32.66</li>\n<li><strong>Quiz_Score_Avg</strong>: 71.41</li>\n<li><strong>Assignments_Submitted</strong>: 3.89</li>\n<li><strong>Progress_Percentage</strong>: 47.07</li>\n<li><strong>Satisfaction_Rating</strong>: 4.08\n\u2192 \ud83d\udd34 <strong>\u0413\u0440\u0443\u043f\u043f\u0430 \u0440\u0438\u0441\u043a\u0430</strong>: \u043d\u0438\u0437\u043a\u0438\u0439 \u043f\u0440\u043e\u0433\u0440\u0435\u0441\u0441, \u043c\u0430\u043b\u043e \u0432\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u043d\u044b\u0445 \u0437\u0430\u0434\u0430\u043d\u0438\u0439 \u0438\u043b\u0438 \u0441\u043b\u0430\u0431\u044b\u0435 \u043e\u0446\u0435\u043d\u043a\u0438.</li>\n</ul>\n<h3 id=\"1\">\u041a\u043b\u0430\u0441\u0442\u0435\u0440 1</h3>\n<h4 id=\"_2\">\ud83d\udcca \u041a\u043b\u044e\u0447\u0435\u0432\u044b\u0435 \u043f\u043e\u043a\u0430\u0437\u0430\u0442\u0435\u043b\u0438</h4>\n<ul>\n<li><strong>Login_Frequency</strong>: 4.59</li>\n<li><strong>Average_Session_Duration_Min</strong>: 32.87</li>\n<li><strong>Quiz_Score_Avg</strong>: 71.79</li>\n<li><strong>Assignments_Submitted</strong>: 4.13</li>\n<li><strong>Progress_Percentage</strong>: 48.95</li>\n<li><strong>Satisfaction_Rating</strong>: 4.10\n\u2192 \ud83d\udfe1 <strong>\u0421\u0440\u0435\u0434\u043d\u0438\u0439 \u0441\u0435\u0433\u043c\u0435\u043d\u0442</strong>: \u0443\u0447\u0430\u0442\u0441\u044f \u0441\u0442\u0430\u0431\u0438\u043b\u044c\u043d\u043e, \u0435\u0441\u0442\u044c \u043f\u043e\u0442\u0435\u043d\u0446\u0438\u0430\u043b \u0440\u043e\u0441\u0442\u0430.</li>\n</ul>\n<h3 id=\"2\">\u041a\u043b\u0430\u0441\u0442\u0435\u0440 2</h3>\n<h4 id=\"_3\">\ud83d\udcca \u041a\u043b\u044e\u0447\u0435\u0432\u044b\u0435 \u043f\u043e\u043a\u0430\u0437\u0430\u0442\u0435\u043b\u0438</h4>\n<ul>\n<li><strong>Login_Frequency</strong>: 5.29</li>\n<li><strong>Average_Session_Duration_Min</strong>: 36.27</li>\n<li><strong>Quiz_Score_Avg</strong>: 76.86</li>\n<li><strong>Assignments_Submitted</strong>: 6.42</li>\n<li><strong>Progress_Percentage</strong>: 66.31</li>\n<li><strong>Satisfaction_Rating</strong>: 4.22\n\u2192 \ud83d\udfe2 <strong>\u0412\u044b\u0441\u043e\u043a\u043e\u0443\u0441\u043f\u0435\u0432\u0430\u044e\u0449\u0438\u0435 \u0441\u0442\u0443\u0434\u0435\u043d\u0442\u044b</strong>: \u043e\u0442\u043b\u0438\u0447\u043d\u044b\u0435 \u043e\u0446\u0435\u043d\u043a\u0438, \u0430\u043a\u0442\u0438\u0432\u043d\u043e\u0441\u0442\u044c \u0438 \u043f\u0440\u043e\u0433\u0440\u0435\u0441\u0441.</li>\n</ul></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "sxNo",
+      "code_hash": "639ebb103510d02c36eb7db21c25cc8e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"_1\">\ud83c\udfaf \u0420\u0435\u043a\u043e\u043c\u0435\u043d\u0434\u0430\u0446\u0438\u0438 \u043f\u043e \u0441\u0435\u0433\u043c\u0435\u043d\u0442\u0430\u043c</h2>\n<ul>\n<li>\n<span class=\"paragraph\"><strong>\u041a\u043b\u0430\u0441\u0442\u0435\u0440\u044b \u0441 \u043d\u0438\u0437\u043a\u0438\u043c \u043f\u0440\u043e\u0433\u0440\u0435\u0441\u0441\u043e\u043c</strong></span>\n<ul>\n<li>\u043e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c \u0430\u0432\u0442\u043e\u043c\u0430\u0442\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u043d\u0430\u043f\u043e\u043c\u0438\u043d\u0430\u043d\u0438\u044f,</li>\n<li>\u043f\u0440\u0435\u0434\u043b\u043e\u0436\u0438\u0442\u044c \u043d\u0430\u0441\u0442\u0430\u0432\u043d\u0438\u043a\u0430,</li>\n<li>\u043a\u043e\u0440\u043e\u0442\u043a\u0438\u0439 \u043e\u0431\u0437\u043e\u0440\u043d\u044b\u0439 \u043c\u0430\u0442\u0435\u0440\u0438\u0430\u043b \u0434\u043b\u044f \u0432\u043e\u0437\u0432\u0440\u0430\u0442\u0430 \u0432 \u043a\u0443\u0440\u0441.</li>\n</ul>\n</li>\n<li>\n<span class=\"paragraph\"><strong>\u041a\u043b\u0430\u0441\u0442\u0435\u0440\u044b \u0441\u043e \u0441\u0440\u0435\u0434\u043d\u0438\u043c \u043f\u0440\u043e\u0433\u0440\u0435\u0441\u0441\u043e\u043c</strong></span>\n<ul>\n<li>\u043f\u0435\u0440\u0441\u043e\u043d\u0430\u043b\u044c\u043d\u044b\u0435 \u0440\u0435\u043a\u043e\u043c\u0435\u043d\u0434\u0430\u0446\u0438\u0438 \u043f\u043e \u0442\u0435\u043c\u0430\u043c,</li>\n<li>\u043f\u043e\u043e\u0449\u0440\u0435\u043d\u0438\u044f \u0437\u0430 \u0440\u0435\u0433\u0443\u043b\u044f\u0440\u043d\u043e\u0441\u0442\u044c.</li>\n</ul>\n</li>\n<li>\n<span class=\"paragraph\"><strong>\u0412\u044b\u0441\u043e\u043a\u043e\u0443\u0441\u043f\u0435\u0432\u0430\u044e\u0449\u0438\u0435</strong></span>\n<ul>\n<li>\u043f\u0440\u0438\u0433\u043b\u0430\u0448\u0435\u043d\u0438\u0435 \u0432 \u043f\u0440\u043e\u0434\u0432\u0438\u043d\u0443\u0442\u044b\u0435 \u043c\u043e\u0434\u0443\u043b\u0438,</li>\n<li>\u0443\u0447\u0430\u0441\u0442\u0438\u0435 \u0432 \u0441\u043e\u0440\u0435\u0432\u043d\u043e\u0432\u0430\u043d\u0438\u044f\u0445 / \u0431\u043e\u043d\u0443\u0441\u0430\u0445,</li>\n<li>\u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u0435 \u0438\u0445 \u043f\u0430\u0442\u0442\u0435\u0440\u043d\u043e\u0432 \u0434\u043b\u044f \u043e\u0431\u0443\u0447\u0435\u043d\u0438\u044f \u0434\u0440\u0443\u0433\u0438\u0445.</li>\n</ul>\n</li>\n</ul></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "JlaM",
+      "code_hash": null,
+      "outputs": [],
+      "console": []
+    }
+  ]
+}
